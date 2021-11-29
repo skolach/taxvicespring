@@ -3,10 +3,6 @@ package com.epam.taxvicespring.entity;
 import java.io.Serializable;
 
 public class CarClass implements Serializable{
-    // id INT NOT NULL AUTO_INCREMENT,
-    // `name` VARCHAR(10) NOT NULL,
-    // `rate` SMALLINT NOT NULL,
-    // `description` VARCHAR(100),
     private int id;
     private String name;
     private int rate;
