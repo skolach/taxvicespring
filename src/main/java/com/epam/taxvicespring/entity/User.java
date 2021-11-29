@@ -1,25 +1,25 @@
 package com.epam.taxvicespring.entity;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
-import com.epam.taxvicespring.security.SecurityConfig;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
+@Entity
 public class User implements Serializable{
 
-    private int id;
+    private @Id 
+    //@GeneratedValue
+    int id;
     private boolean isAdmin;
     private String login;
     private String password;
     private String name;
-    private Integer discount;
-    private List<String> roles = new ArrayList<>(1);
+    private Short discount;
     
-    public User() {
-    }
+    public User() {}
 
-    public User(boolean isAdmin, String login, String password, String name, Integer discount) {
+    public User(boolean isAdmin, String login, String password, String name, Short discount) {
         this.isAdmin = isAdmin;
         this.login = login;
         this.password = password;
@@ -41,7 +41,6 @@ public class User implements Serializable{
 
     public void setIsAdmin(boolean isAdmin) {
         this.isAdmin = isAdmin;
-        this.roles.add(isAdmin ? SecurityConfig.ROLE_ADMIN : SecurityConfig.ROLE_CUSTOMER);
     }
 
     public String getLogin() {
@@ -68,16 +67,12 @@ public class User implements Serializable{
         this.name = name;
     }
 
-    public Integer getDiscount() {
+    public Short getDiscount() {
         return discount;
     }
 
-    public void setDiscount(Integer discount) {
+    public void setDiscount(Short discount) {
         this.discount = discount;
-    }
-
-    public List<String> getRoles(){
-        return roles;
     }
 
     @Override
