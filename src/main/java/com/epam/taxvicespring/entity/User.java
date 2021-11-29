@@ -8,9 +8,7 @@ import javax.persistence.Id;
 @Entity
 public class User implements Serializable{
 
-    private @Id 
-    //@GeneratedValue
-    int id;
+    private @Id Integer id;
     private boolean isAdmin;
     private String login;
     private String password;
